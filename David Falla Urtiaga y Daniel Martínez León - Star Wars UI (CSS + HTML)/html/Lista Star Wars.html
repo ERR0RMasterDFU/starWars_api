@@ -40,38 +40,38 @@
             </div>
 
             <div class="modal fade" id="detalles" tabindex="-1">
-                <div class="modal-dialog modal-xl modal-dialog-centered" style="height: 400px;">
+                <div class="modal-dialog modal-lg modal-dialog-centered" style="height: 400px;">
                     <div class="modal-content d-flex flex-row fondoModal">
-                        <div>
-                            <img id="modalPokemonImage" class="bg-dark bg-opacity-25" src="" alt="" width="400" height="400"/>
-                        </div>
-                        <div class="modal-body">
-                            <div class="text-end"><button type="button" class="btn-close mb-4" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                        <div class="modal-body mb-4">
+                            <div class="text-end"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
                             <div class="d-flex justify-content-between bg-dark mx-4 px-4 py-1">
-                                <div class="text-light"><strong>Nº <span id="modalPokemonId"></span></strong></div>
-                                <div class="text-light"><strong id="modalPokemonName"></strong></div>
-                                <div class="text-light"><i class="bi bi-gender-male azul"></i><i class="bi bi-gender-female rosa"></i></div>
+                                <div class="text-light"><strong>Nº <span id="modalPersonajeId"></span></strong></div>
+                                <div class="text-light"><strong id="modalPersonajeName"></strong></div>
+                                <div class="text-light" id="modalPersonajeGender">¿?</div>
                             </div>
-                            <div class="bg-light text-center mx-4 my-2 py-1"><strong id="modalPokemonCategory">POKÉMON DESCONOCIDO</strong></div>
+                            <div class="bg-light text-center mx-4 my-2 py-1"><strong id="modalPersonajeFecha">FECHA DE NACIMIENTO DESCONOCIDA</strong></div>
                             <div class="bg-light mx-4 my-2 py-1">
                                 <div class="d-flex justify-content-around w-100">
-                                    <div class="w-50 text-center"><strong>TIPO</strong></div>
-                                    <div class="w-50 text-center" id="modalPokemonType">Desconocido</div>
-                                </div>
-                                <div class="d-flex justify-content-around w-100">
                                     <div class="w-50 text-center"><strong>ALTURA</strong></div>
-                                    <div class="w-50 text-center" id="modalPokemonHeight">Desconocido</div>
+                                    <div class="w-50 text-center text-capitalize" id="modalPersonajeHeight">Desconocida</div>
                                 </div>
                                 <div class="d-flex justify-content-around w-100">
                                     <div class="w-50 text-center"><strong>PESO</strong></div>
-                                    <div class="w-50 text-center" id="modalPokemonWeight">Desconocido</div>
+                                    <div class="w-50 text-center text-capitalize" id="modalPersonajeWeight">Desconocido</div>
                                 </div>
                                 <div class="d-flex justify-content-around w-100">
-                                    <div class="w-50 text-center"><strong>GENERACIÓN</strong></div>
-                                    <div class="w-50 text-center" id="modalPokemonGeneration">Desconocido</div>
+                                    <div class="w-50 text-center"><strong>COLOR DE PELO</strong></div>
+                                    <div class="w-50 text-center text-capitalize" id="modalPersonajePelo">Desconocido</div>
+                                </div>
+                                <div class="d-flex justify-content-around w-100">
+                                    <div class="w-50 text-center"><strong>COLOR DE PIEL</strong></div>
+                                    <div class="w-50 text-center text-capitalize" id="modalPersonajePiel">Desconocido</div>
+                                </div>
+                                <div class="d-flex justify-content-around w-100">
+                                    <div class="w-50 text-center"><strong>COLOR DE OJOS</strong></div>
+                                    <div class="w-50 text-center text-capitalize" id="modalPersonajeOjo">Desconocido</div>
                                 </div>
                             </div>
-                            <div class="bg-light text-center mx-4 px-4 py-1" id="modalPokemonDescription">Descripción del Pokémon no disponible.</div>
                         </div>
                     </div>
                 </div>
