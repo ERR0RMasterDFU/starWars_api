@@ -39,11 +39,47 @@ $(document).ready(function() {
                 } else {
                     $("#data-content img").remove();
                 }
+
+
+                $(".personaje-detail").click(function () {
+                    let personajeId = $(this).data("id");
+                    let personajeName = $(this).data("name");
+
+                    $.ajax({
+                        url: `https://swapi.dev/api/people/${personajeId}`,
+                        method: "GET",
+                    }).done(function (swapiData) {
+
+                        $("#modalPersonajeId").text(personajeId);
+                        $("#modalPersonajeName").text(personajeName);
+                        
+                        switch(swapiData.gender){
+                            case "male":
+                                $("#modalPersonajeGender").html(`<p class="m-0 azul"><strong>HOMBRE</strong>&emsp;<i class="bi bi-gender-male azul"></i></p>`);
+                                break;
+                            case "female":
+                                $("#modalPersonajeGender").html(`<p class="m-0 rosa"><strong>MUJER</strong>&emsp;<i class="bi bi-gender-female rosa"></i></p>`);
+                                break;
+
+                            default:
+                                $("#modalPersonajeGender").html(`<p class="m-0 gris"><strong>N/A</strong>&emsp;<i class="bi bi-gender-neuter gris"></i></p>`);
+                        }
+                        
+                        $("#modalPersonajeFecha").text(`FECHA DE NACIMIENTO: ${swapiData.birth_year}`);
+
+                        $("#modalPersonajeHeight").text(`${swapiData.height / 100} m`);
+                        $("#modalPersonajeWeight").text(`${swapiData.mass} kg`);
+                        $("#modalPersonajePelo").text(`${swapiData.hair_color}`);
+                        $("#modalPersonajePiel").text(`${swapiData.skin_color}`);
+                        $("#modalPersonajeOjo").text(`${swapiData.eye_color}`);
+
+                    }).fail(function (jqXHR, textStatus, errorThrown) {
+                        console.error("API request failed:", textStatus, errorThrown);
+                        // Eliminar el logo de cargando en caso de error
+                        $("#data-content img").remove();
+                    });
+                });
             }, 1000);
-        }).fail(function (jqXHR, textStatus, errorThrown) {
-            console.error("API request failed:", textStatus, errorThrown);
-            // Eliminar el logo de cargando en caso de error
-            $("#data-content img").remove();
         });
     }
 });
