@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/detalles.css">
+    <style>
+        @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
+        .navbar-brand img, .center-image {
+            height: 64px;
+            width: auto;
+        }
+
+    </style>
+    <title>Pokédex</title>
+</head>
+<body class="d-flex flex-column vh-100">
+    <header class="fixed-top">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-danger">
+            <div class="container-fluid d-flex justify-content-between">
+                <a class="navbar-brand" href="">
+                    <img src="../img/flat,750x,075,f-pad,750x1000,f8f8f8.png" alt="logo">
+                </a>
+                <div class="d-flex justify-content-center w-100">
+                    <img src="../img/Sin título-1.png" class="center-image" alt="imagen centrada">
+                </div>
+                <div class="navbar-brand"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow-1" style="margin-top: 56px;">
+        <div class="container">
+            <div class="d-flex mt-5">
+                <div class="dropdown">
+                    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownTipo" data-bs-toggle="dropdown" aria-expanded="false">
+                        Tipo
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownTipo">
+                        <li><a class="dropdown-item" href="#">Fuego</a></li>
+                        <li><a class="dropdown-item" href="#">Agua</a></li>
+                        <li><a class="dropdown-item" href="#">Planta</a></li>
+                        <li><a class="dropdown-item" href="#">Eléctrico</a></li>
+                        <li><a class="dropdown-item" href="#">Roca</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownSexo" data-bs-toggle="dropdown" aria-expanded="false">
+                        Sexo
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownSexo">
+                        <li><a class="dropdown-item" href="#">Macho</a></li>
+                        <li><a class="dropdown-item" href="#">Hembra</a></li>
+                        <li><a class="dropdown-item" href="#">Sin género</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownGeneracion" data-bs-toggle="dropdown" aria-expanded="false">
+                        Generación
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownGeneracion">
+                        <li><a class="dropdown-item" href="#">Generación 1</a></li>
+                        <li><a class="dropdown-item" href="#">Generación 2</a></li>
+                        <li><a class="dropdown-item" href="#">Generación 3</a></li>
+                        <li><a class="dropdown-item" href="#">Generación 4</a></li>
+                        <li><a class="dropdown-item" href="#">Generación 5</a></li>
+                        <li><a class="dropdown-item" href="#">Generación 6</a></li>
+                        <li><a class="dropdown-item" href="#">Generación 7</a></li>
+                        <li><a class="dropdown-item" href="#">Generación 8</a></li>
+                        <li><a class="dropdown-item" href="#">Generación 9</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownRegion" data-bs-toggle="dropdown" aria-expanded="false">
+                        Región
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownRegion">
+                        <li><a class="dropdown-item" href="#">Kanto</a></li>
+                        <li><a class="dropdown-item" href="#">Johto</a></li>
+                        <li><a class="dropdown-item" href="#">Hoenn</a></li>
+                        <li><a class="dropdown-item" href="#">Sinnoh</a></li>
+                        <li><a class="dropdown-item" href="#">Teselia</a></li>
+                        <li><a class="dropdown-item" href="#">Kalos</a></li>
+                        <li><a class="dropdown-item" href="#">Alola</a></li>
+                        <li><a class="dropdown-item" href="#">Galar</a></li>
+                        <li><a class="dropdown-item" href="#">Paldea</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="data-content" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4">
+            </div>
+
+            <div class="modal fade" id="detalles" tabindex="-1">
+                <div class="modal-dialog modal-xl modal-dialog-centered" style="height: 400px;">
+                    <div class="modal-content d-flex flex-row fondoModal">
+                        <div>
+                            <img id="modalPokemonImage" class="bg-dark bg-opacity-25" src="" alt="" width="400" height="400"/>
+                        </div>
+                        <div class="modal-body">
+                            <div class="text-end"><button type="button" class="btn-close mb-4" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                            <div class="d-flex justify-content-between bg-dark mx-4 px-4 py-1">
+                                <div class="text-light"><strong>Nº <span id="modalPokemonId"></span></strong></div>
+                                <div class="text-light"><strong id="modalPokemonName"></strong></div>
+                                <div class="text-light"><i class="bi bi-gender-male azul"></i><i class="bi bi-gender-female rosa"></i></div>
+                            </div>
+                            <div class="bg-light text-center mx-4 my-2 py-1"><strong id="modalPokemonCategory">POKÉMON DESCONOCIDO</strong></div>
+                            <div class="bg-light mx-4 my-2 py-1">
+                                <div class="d-flex justify-content-around w-100">
+                                    <div class="w-50 text-center"><strong>TIPO</strong></div>
+                                    <div class="w-50 text-center" id="modalPokemonType">Desconocido</div>
+                                </div>
+                                <div class="d-flex justify-content-around w-100">
+                                    <div class="w-50 text-center"><strong>ALTURA</strong></div>
+                                    <div class="w-50 text-center" id="modalPokemonHeight">Desconocido</div>
+                                </div>
+                                <div class="d-flex justify-content-around w-100">
+                                    <div class="w-50 text-center"><strong>PESO</strong></div>
+                                    <div class="w-50 text-center" id="modalPokemonWeight">Desconocido</div>
+                                </div>
+                                <div class="d-flex justify-content-around w-100">
+                                    <div class="w-50 text-center"><strong>GENERACIÓN</strong></div>
+                                    <div class="w-50 text-center" id="modalPokemonGeneration">Desconocido</div>
+                                </div>
+                            </div>
+                            <div class="bg-light text-center mx-4 px-4 py-1" id="modalPokemonDescription">Descripción del Pokémon no disponible.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="bg-light text-center text-white">
+        <div class="container-fluid p-4 pb-0">
+            <section class="mb-4">
+                <a class="btn text-white btn-floating m-1" style="background-color: #3b5998;" href="#!" role="button"><i class="bi bi-facebook"></i></a>
+                <a class="btn text-white btn-floating m-1" style="background-color: #55acee;" href="#!" role="button"><i class="bi bi-twitter"></i></a>
+                <a class="btn text-white btn-floating m-1" style="background-color: #dd4b39;" href="#!" role="button"><i class="bi bi-google"></i></a>
+                <a class="btn text-white btn-floating m-1" style="background-color: #ac2bac;" href="#!" role="button"><i class="bi bi-instagram"></i></a>
+                <a class="btn text-white btn-floating m-1" style="background-color: #0082ca;" href="#!" role="button"><i class="bi bi-linkedin"></i></a>
+                <a class="btn text-white btn-floating m-1" style="background-color: #333333;" href="#!" role="button"><i class="bi bi-github"></i></a>
+            </section>
+    
+            <div class="row" style="background-color: rgb(0, 0, 0);">
+                <div class="col">
+                    <p class="text-white">Aviso legal</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+                </div>
+                <div class="col">
+                    <p class="text-white">Dirección</p>
+                    <p>Av. Magdalena Sofía de Barat, 82, 1ºA</p>
+                    <p>41927 Mairena del Aljarafe, Sevilla</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../js/lista.js"></script>
+</body>
+</html>
